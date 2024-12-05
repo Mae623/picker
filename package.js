@@ -9,12 +9,12 @@ Npm.depends({
   'path-to-regexp': '1.2.1'
 });
 
-Package.onUse(function(api) {
+Package.onUse(function (api) {
   configurePackage(api);
   api.export(['Picker']);
 });
 
-Package.onTest(function(api) {
+Package.onTest(function (api) {
   configurePackage(api);
   api.use(['tinytest', 'http', 'random'], ['server']);
   api.addFiles([
@@ -23,11 +23,11 @@ Package.onTest(function(api) {
 });
 
 function configurePackage(api) {
-  if(api.versionsFrom) {
+  if (api.versionsFrom) {
     api.versionsFrom('METEOR@1.2');
   }
 
-  api.use(['webapp', 'underscore'], ['server']);
+  api.use(['webapp@2.0.4', 'underscore'], ['server']);
   api.addFiles([
     'lib/implementation.js',
     'lib/instance.js',
